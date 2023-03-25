@@ -7,7 +7,7 @@ from faker import Faker
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
 
-df = pd.read_csv("Dropout_Academic Success - Sheet2.csv", skipinitialspace=True)
+df = pd.read_csv("src/data/Dropout_Academic Success - Sheet2.csv", skipinitialspace=True)
 
 df.insert(loc=0, column='Name', value=[fake.name() for _ in range(len(df))])
 df.set_index("Name", inplace=True)
@@ -15,9 +15,9 @@ df.set_index("Name", inplace=True)
 #Reemplazo la variable objetivo con valores numericos
 df["Target"] = df["Target"].replace({"Dropout": 0, "No dropout": 1})
 
-#Divido el dataset 25% test y 75% entrenamiento
+#Divido el dataset 20% test y 80% entrenamiento
 X_train, X_test, y_train, y_test = train_test_split(
-    df[df.columns[:-1]], df["Target"], test_size=0.25
+    df[df.columns[:-1]], df["Target"], test_size=0.20
 )
 
 #Escoge el mejor modelo
@@ -28,7 +28,7 @@ model = AutoML(algorithms=["Baseline", "Linear", "Decision Tree", "Random Forest
                explain_level=2,
                validation_strategy={
                     "validation_type": "split",
-                    "train_ratio": 0.75,
+                    "train_ratio": 0.80,
                     "shuffle" : True,
                     "stratify" : True,
                })

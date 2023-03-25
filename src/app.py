@@ -3,14 +3,22 @@ from dash import Dash
 
 import sys
 import os
+
+from tabs.testAll import *
+from tabs.AutoMLReportTab import AutoMLReportTab
+from tabs.ClassificationStatsTab import ClassificationStatsTab
+from tabs.CounterfactualsTab import CounterfactualsTab
+from tabs.FeaturesImportancesTab import FeaturesImportanceBasicTab, FeaturesImportanceExpertTab
+from tabs.WhatIfTab import WhatIfBasicTab, WhatIfExpertTab
+
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-from dashboard.tabs.testAll import *
-from dashboard.tabs.AutoMLReportTab import *
-from dashboard.tabs.FeaturesImportancesTab import *
-from dashboard.tabs.ClassificationStatsTab import *
-from dashboard.tabs.WhatIfTab import *
-from dashboard.tabs.CounterfactualsTab import *
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from supervised.automl import AutoML
+from faker import Faker
+
 
 app = Dash(__name__)
 server = app.server
