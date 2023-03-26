@@ -1,0 +1,250 @@
+{
+    "fit_level": "simple_algorithms",
+    "time_controller": {
+        "total_time_limit": 3600,
+        "model_time_limit": null,
+        "steps": [
+            "simple_algorithms",
+            "default_algorithms",
+            "ensemble"
+        ],
+        "algorithms": [
+            "Baseline",
+            "Linear",
+            "Decision Tree",
+            "Random Forest",
+            "Extra Trees",
+            "Xgboost",
+            "LightGBM",
+            "CatBoost",
+            "Neural Network",
+            "Nearest Neighbors"
+        ],
+        "spend": [
+            {
+                "model_name": "prepare_data",
+                "model_type": "prepare_data",
+                "fit_level": "prepare_data",
+                "train_time": 0.03553628921508789
+            },
+            {
+                "model_name": "1_Baseline",
+                "model_type": "Baseline",
+                "fit_level": "simple_algorithms",
+                "train_time": 0.8344569206237793
+            }
+        ],
+        "is_hill_climbing": false,
+        "is_stacking": false
+    },
+    "all_params": {
+        "simple_algorithms": [
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {},
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.8,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_1\\X.data",
+                    "y_path": "AutoML_1\\y.data",
+                    "results_path": "AutoML_1"
+                },
+                "learner": {
+                    "model_type": "Baseline",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "explain_level": 2
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "1_Baseline",
+                "status": "trained",
+                "final_loss": 0.628393863053437,
+                "train_time": 1.4681577682495117,
+                "data_type": "original",
+                "max_time_for_learner": 360.0
+            },
+            {
+                "additional": {
+                    "trees_in_step": 1,
+                    "train_cant_improve_limit": 0,
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {},
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.8,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_1\\X.data",
+                    "y_path": "AutoML_1\\y.data",
+                    "results_path": "AutoML_1"
+                },
+                "learner": {
+                    "model_type": "Decision Tree",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235,
+                    "criterion": "gini",
+                    "max_depth": 3
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "2_DecisionTree",
+                "status": "initialized",
+                "final_loss": null,
+                "train_time": null,
+                "data_type": "original"
+            },
+            {
+                "additional": {
+                    "max_steps": 1,
+                    "max_rows_limit": null,
+                    "max_cols_limit": null
+                },
+                "preprocessing": {
+                    "columns_preprocessing": {
+                        "Marital status": [
+                            "scale_normal"
+                        ],
+                        "Application mode": [
+                            "scale_normal"
+                        ],
+                        "Application order": [
+                            "scale_normal"
+                        ],
+                        "Course": [
+                            "scale_normal"
+                        ],
+                        "Daytime/evening attendance": [
+                            "scale_normal"
+                        ],
+                        "Previous qualification": [
+                            "scale_normal"
+                        ],
+                        "Previous qualification (grade)": [
+                            "scale_normal"
+                        ],
+                        "Nacionality": [
+                            "scale_normal"
+                        ],
+                        "Mother's qualification": [
+                            "scale_normal"
+                        ],
+                        "Father's qualification": [
+                            "scale_normal"
+                        ],
+                        "Mother's occupation": [
+                            "scale_normal"
+                        ],
+                        "Father's occupation": [
+                            "scale_normal"
+                        ],
+                        "Admission grade": [
+                            "scale_normal"
+                        ],
+                        "Displaced": [
+                            "scale_normal"
+                        ],
+                        "Tuition fees up to date": [
+                            "scale_normal"
+                        ],
+                        "Age at enrollment": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 1st sem (credited)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 1st sem (enrolled)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 1st sem (evaluations)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 1st sem (approved)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 1st sem (grade)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 2nd sem (credited)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 2nd sem (enrolled)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 2nd sem (evaluations)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 2nd sem (approved)": [
+                            "scale_normal"
+                        ],
+                        "Curricular units 2nd sem (grade)": [
+                            "scale_normal"
+                        ],
+                        "Unemployment rate": [
+                            "scale_normal"
+                        ],
+                        "Inflation rate": [
+                            "scale_normal"
+                        ],
+                        "GDP": [
+                            "scale_normal"
+                        ]
+                    },
+                    "target_preprocessing": [
+                        "na_exclude"
+                    ],
+                    "ml_task": "binary_classification"
+                },
+                "validation_strategy": {
+                    "validation_type": "split",
+                    "train_ratio": 0.8,
+                    "shuffle": true,
+                    "stratify": true,
+                    "X_path": "AutoML_1\\X.data",
+                    "y_path": "AutoML_1\\y.data",
+                    "results_path": "AutoML_1"
+                },
+                "learner": {
+                    "model_type": "Linear",
+                    "ml_task": "binary_classification",
+                    "n_jobs": -1,
+                    "seed": 1235
+                },
+                "automl_random_state": 1234,
+                "ml_task": "binary_classification",
+                "explain_level": 2,
+                "name": "3_Linear",
+                "status": "initialized",
+                "final_loss": null,
+                "train_time": null,
+                "data_type": "original"
+            }
+        ]
+    },
+    "adjust_validation": false
+}

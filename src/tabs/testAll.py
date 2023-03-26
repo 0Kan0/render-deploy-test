@@ -7,7 +7,7 @@ from faker import Faker
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
 
-df = pd.read_csv(r'src/data/Dropout.csv', skipinitialspace=True)
+df = pd.read_csv('src/data/Dropout.csv', skipinitialspace=True)
 
 df.insert(loc=0, column='Name', value=[fake.name() for _ in range(len(df))])
 df.set_index("Name", inplace=True)
