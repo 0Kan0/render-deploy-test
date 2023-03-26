@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
 from faker import Faker
 
-path = Path.cwd() / "src/data"
+path = Path.cwd() / "data"
 
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
