@@ -1,13 +1,15 @@
 import pandas as pd
-
+from pathlib import Path
 from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
 from faker import Faker
 
+path = Path.cwd() / "src/data"
+
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
 
-df = pd.read_csv('src/data/Dropout.csv', skipinitialspace=True)
+df = pd.read_csv(path/"Dropout.csv", skipinitialspace=True)
 
 df.insert(loc=0, column='Name', value=[fake.name() for _ in range(len(df))])
 df.set_index("Name", inplace=True)
