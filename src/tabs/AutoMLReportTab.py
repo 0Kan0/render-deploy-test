@@ -2,7 +2,6 @@ import dash_bootstrap_components as dbc
 
 from .components import *
 from explainerdashboard.custom import *
-from src.app import *
 
 class AutoMLReportTab(ExplainerComponent):
     def __init__(self, explainer, title="AutoML Report", name=None,

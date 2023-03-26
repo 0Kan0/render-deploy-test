@@ -13,13 +13,6 @@ from tabs.WhatIfTab import WhatIfBasicTab, WhatIfExpertTab
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
-import pandas as pd
-
-from sklearn.model_selection import train_test_split
-from supervised.automl import AutoML
-from faker import Faker
-
-
 app = Dash(__name__)
 server = app.server
 

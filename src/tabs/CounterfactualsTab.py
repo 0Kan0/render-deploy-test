@@ -1,7 +1,6 @@
 import dash_bootstrap_components as dbc
 
 from .components import *
-from src.app import *
 
 class CounterfactualsTab(ExplainerComponent):
     def __init__(self, explainer, title="Counterfactuals scenarios", name=None,
