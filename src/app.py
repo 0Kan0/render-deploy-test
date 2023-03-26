@@ -14,7 +14,7 @@ from tabs.WhatIfTab import WhatIfBasicTab, WhatIfExpertTab
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 app = Dash(__name__)
-server = app.server
+server = app.server()
 
 explainer = ClassifierExplainer(model, X_test, y_test, labels=["Dropout", "No dropout"], target="Target")
 
