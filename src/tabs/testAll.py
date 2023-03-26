@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
 from faker import Faker
 
-path = Path.cwd() / "data"
+path = Path.cwd() / "src/data"
 
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
@@ -12,6 +12,7 @@ fake = Faker()
 df = pd.read_csv(path/"Dropout.csv", skipinitialspace=True)
 
 df.insert(loc=0, column='Name', value=[fake.name() for _ in range(len(df))])
+
 df.set_index("Name", inplace=True)
 
 #Reemplazo la variable objetivo con valores numericos
@@ -25,7 +26,6 @@ X_train, X_test, y_train, y_test = train_test_split(
 #Escoge el mejor modelo
 model = AutoML(algorithms=["Baseline", "Linear", "Decision Tree", "Random Forest", "Extra Trees", "Xgboost", "LightGBM", "CatBoost", "Neural Network", "Nearest Neighbors"],
                start_random_models=1,
-               stack_models=True,
                train_ensemble=True,
                explain_level=2,
                validation_strategy={

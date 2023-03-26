@@ -1,6 +1,6 @@
 from explainerdashboard import ClassifierExplainer, ExplainerDashboard, ExplainerHub
 from dash import Dash
-
+import warnings;   warnings.filterwarnings("ignore")
 import sys
 import os
 
