@@ -24,13 +24,13 @@ class AutoMLReportComponent(ExplainerComponent):
                     html.H6(self.subtitle, className='card-subtitle')
                 ]),
             ]),
-            dbc.CardBody([
+            """ dbc.CardBody([
                 dbc.Row([
                     dbc.Col([
                         html.Iframe(srcDoc=model_report.data, style={'width': '100%', 'height': '1000px'})
                     ]),
                 ], class_name="mt-4")
-            ])
+            ]) """
         ], class_name="h-100")
 
 class SelectStudentComponent(ExplainerComponent):

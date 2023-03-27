@@ -1,0 +1,37 @@
+feature,shap_importance
+Curricular units 2nd sem (grade),0.11399447256624154
+Curricular units 2nd sem (approved),0.09413783965117975
+Tuition fees up to date,0.086528363791462
+Curricular units 1st sem (approved),0.024830096480415908
+Scholarship holder,0.014978411422500877
+Course,0.014610327815935867
+Curricular units 1st sem (enrolled),0.008188951143125081
+Debtor,0.00555668847147539
+Curricular units 2nd sem (credited),0.003650234584802218
+Curricular units 2nd sem (enrolled),0.003452364814519836
+Curricular units 2nd sem (evaluations),0.0023878198463236334
+Curricular units 1st sem (grade),0.002022957947183958
+Age at enrollment,0.001636656373106538
+Inflation rate,0.0011989540722069716
+GDP,0.0009284918788726494
+Father's occupation,0.0006624777872976464
+Curricular units 2nd sem (without evaluations),0.000579293555518661
+Admission grade,0.0004001132114316822
+Mother's occupation,0.00038707714888715396
+Application mode,0.0003088490139115675
+Previous qualification (grade),0.00030402866288927816
+Displaced,0.0002905822868047227
+Curricular units 1st sem (without evaluations),0.00020082944494736264
+Curricular units 1st sem (credited),0.0001893370603609483
+Educational special needs,0.0
+Application order,0.0
+Unemployment rate,0.0
+Daytime/evening attendance,0.0
+Previous qualification,0.0
+Father's qualification,0.0
+Nacionality,0.0
+Mother's qualification,0.0
+Curricular units 1st sem (evaluations),0.0
+International,0.0
+Gender,0.0
+Marital status,0.0

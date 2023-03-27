@@ -1,10 +1,10 @@
-import pandas as pd
+""" import pandas as pd
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
 from faker import Faker
 
-path = Path.cwd() / "data"
+path = Path.cwd() / "src/data"
 
 #Añade el dataset junto a columna nombre con nombres aleatorios
 fake = Faker()
@@ -39,4 +39,4 @@ model = AutoML(algorithms=["Baseline", "Linear", "Decision Tree", "Random Forest
 trained_model = model.fit(X_train, y_train)
 
 #Genero el reporte (se usa en la pestaña AutoML Report)
-model_report = trained_model.report()
+model_report = trained_model.report() """
