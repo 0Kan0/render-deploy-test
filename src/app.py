@@ -8,7 +8,7 @@ from tabs.FeaturesImportancesTab import FeaturesImportanceBasicTab, FeaturesImpo
 from tabs.WhatIfTab import WhatIfBasicTab, WhatIfExpertTab
 
 app = Dash(__name__)
-server = app.server()
+server = app.server
 
 explainer = ClassifierExplainer.from_file("dashboard1_explainer.dill")
 
@@ -20,4 +20,5 @@ db2 = ExplainerDashboard(explainer, header_hide_selector=True, hide_poweredby=Tr
 
 hub = ExplainerHub([db1, db2], title="Students Academic Failure Prediction Tool", description="")
 
-hub.run()
+if __name__ == "__main__":
+    app.run_server(debug=False)
