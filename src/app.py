@@ -13,7 +13,7 @@ server = app.server
 
 path = Path.cwd() / ""
 
-explainer = ClassifierExplainer.from_file("dashboard1_explainer.dill")
+explainer = ClassifierExplainer.from_file(path/"dashboard1_explainer.dill")
 
 db1 = ExplainerDashboard(explainer, header_hide_selector=True, hide_poweredby=True, title="AutoML Student Dropout Explainer basic", 
                         tabs=[FeaturesImportanceBasicTab, WhatIfBasicTab])
