@@ -1,0 +1,387 @@
+{
+    "uid": "71f648c2-4c12-4bd2-9377-0a2b9c60f317",
+    "name": "3_Linear",
+    "preprocessing": [
+        {
+            "scale": [
+                {
+                    "scale": [
+                        0.5780364164432383,
+                        17.57584798521054,
+                        1.2976226257931134,
+                        1969.944353079284,
+                        0.31533516069535955,
+                        10.395060124998622,
+                        13.26881767402133,
+                        6.83576125014942,
+                        15.678281921506446,
+                        15.37221418398948,
+                        26.178791050586703,
+                        24.761471808516223,
+                        14.522066898398238,
+                        0.4968952126009035,
+                        0.3291603647820143,
+                        7.542196509248078,
+                        2.421121328934321,
+                        2.477677533536539,
+                        4.192368074712881,
+                        3.0969410071495287,
+                        4.796203233994689,
+                        1.9712286683689269,
+                        2.174840668334373,
+                        3.9463564671527083,
+                        2.999612742317144,
+                        5.160070515794935,
+                        2.667147806718008,
+                        1.3868828119597667,
+                        2.267931096678243
+                    ],
+                    "mean": [
+                        1.1713175556340516,
+                        19.078770752384315,
+                        1.7099964676792654,
+                        8902.877075238432,
+                        0.88802543270929,
+                        4.7601554221123275,
+                        132.69272341928647,
+                        1.8795478629459554,
+                        19.282585658777815,
+                        22.051925114800422,
+                        10.879194630872483,
+                        11.014482515012363,
+                        127.13521723772519,
+                        0.5556340515718827,
+                        0.876368774284705,
+                        23.240197809961145,
+                        0.7354291769692688,
+                        6.298834334157542,
+                        8.38078417520311,
+                        4.7138820204874605,
+                        10.711530885241963,
+                        0.5570469798657718,
+                        6.249735075944896,
+                        8.161427057576828,
+                        4.442599788060756,
+                        10.286251138396327,
+                        11.56895090074179,
+                        1.242776404097492,
+                        -0.006333451077357817
+                    ],
+                    "var": [
+                        0.3341260987345408,
+                        308.91043239922936,
+                        1.6838244789702146,
+                        3880680.7542289584,
+                        0.09943626357076824,
+                        108.05727500233637,
+                        176.0615224664208,
+                        46.727631869044366,
+                        245.80852401023586,
+                        236.30496891844732,
+                        685.3291008702785,
+                        613.1304861239437,
+                        210.89042700155383,
+                        0.2469048523056971,
+                        0.10834654574342875,
+                        56.8847281841139,
+                        5.861828489420692,
+                        6.138885960191706,
+                        17.575950073871795,
+                        9.591043601764337,
+                        23.003565461781108,
+                        3.8857424629995325,
+                        4.729931932641102,
+                        15.573729365838004,
+                        8.997676603871378,
+                        26.626327727976204,
+                        7.113677422880679,
+                        1.9234439341094294,
+                        5.143511459280178
+                    ],
+                    "n_samples_seen": 2831,
+                    "n_features_in": 29,
+                    "columns": [
+                        "Marital status",
+                        "Application mode",
+                        "Application order",
+                        "Course",
+                        "Daytime/evening attendance",
+                        "Previous qualification",
+                        "Previous qualification (grade)",
+                        "Nacionality",
+                        "Mother's qualification",
+                        "Father's qualification",
+                        "Mother's occupation",
+                        "Father's occupation",
+                        "Admission grade",
+                        "Displaced",
+                        "Tuition fees up to date",
+                        "Age at enrollment",
+                        "Curricular units 1st sem (credited)",
+                        "Curricular units 1st sem (enrolled)",
+                        "Curricular units 1st sem (evaluations)",
+                        "Curricular units 1st sem (approved)",
+                        "Curricular units 1st sem (grade)",
+                        "Curricular units 2nd sem (credited)",
+                        "Curricular units 2nd sem (enrolled)",
+                        "Curricular units 2nd sem (evaluations)",
+                        "Curricular units 2nd sem (approved)",
+                        "Curricular units 2nd sem (grade)",
+                        "Unemployment rate",
+                        "Inflation rate",
+                        "GDP"
+                    ],
+                    "scale_method": "scale_normal"
+                }
+            ],
+            "ml_task": "binary_classification",
+            "params": {
+                "columns_preprocessing": {
+                    "Marital status": [
+                        "scale_normal"
+                    ],
+                    "Application mode": [
+                        "scale_normal"
+                    ],
+                    "Application order": [
+                        "scale_normal"
+                    ],
+                    "Course": [
+                        "scale_normal"
+                    ],
+                    "Daytime/evening attendance": [
+                        "scale_normal"
+                    ],
+                    "Previous qualification": [
+                        "scale_normal"
+                    ],
+                    "Previous qualification (grade)": [
+                        "scale_normal"
+                    ],
+                    "Nacionality": [
+                        "scale_normal"
+                    ],
+                    "Mother's qualification": [
+                        "scale_normal"
+                    ],
+                    "Father's qualification": [
+                        "scale_normal"
+                    ],
+                    "Mother's occupation": [
+                        "scale_normal"
+                    ],
+                    "Father's occupation": [
+                        "scale_normal"
+                    ],
+                    "Admission grade": [
+                        "scale_normal"
+                    ],
+                    "Displaced": [
+                        "scale_normal"
+                    ],
+                    "Tuition fees up to date": [
+                        "scale_normal"
+                    ],
+                    "Age at enrollment": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 1st sem (credited)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 1st sem (enrolled)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 1st sem (evaluations)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 1st sem (approved)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 1st sem (grade)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 2nd sem (credited)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 2nd sem (enrolled)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 2nd sem (evaluations)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 2nd sem (approved)": [
+                        "scale_normal"
+                    ],
+                    "Curricular units 2nd sem (grade)": [
+                        "scale_normal"
+                    ],
+                    "Unemployment rate": [
+                        "scale_normal"
+                    ],
+                    "Inflation rate": [
+                        "scale_normal"
+                    ],
+                    "GDP": [
+                        "scale_normal"
+                    ]
+                },
+                "target_preprocessing": [
+                    "na_exclude"
+                ],
+                "ml_task": "binary_classification"
+            }
+        }
+    ],
+    "learners": [
+        {
+            "library_version": "1.2.2",
+            "algorithm_name": "Logistic Regression",
+            "algorithm_short_name": "Linear",
+            "uid": "ee18bb36-4da6-4974-a0a8-1b5cc9e8ff48",
+            "params": {
+                "model_type": "Linear",
+                "ml_task": "binary_classification",
+                "n_jobs": -1,
+                "seed": 1235,
+                "explain_level": 2
+            },
+            "name": "learner_fold_0"
+        }
+    ],
+    "params": {
+        "additional": {
+            "max_steps": 1,
+            "max_rows_limit": null,
+            "max_cols_limit": null
+        },
+        "preprocessing": {
+            "columns_preprocessing": {
+                "Marital status": [
+                    "scale_normal"
+                ],
+                "Application mode": [
+                    "scale_normal"
+                ],
+                "Application order": [
+                    "scale_normal"
+                ],
+                "Course": [
+                    "scale_normal"
+                ],
+                "Daytime/evening attendance": [
+                    "scale_normal"
+                ],
+                "Previous qualification": [
+                    "scale_normal"
+                ],
+                "Previous qualification (grade)": [
+                    "scale_normal"
+                ],
+                "Nacionality": [
+                    "scale_normal"
+                ],
+                "Mother's qualification": [
+                    "scale_normal"
+                ],
+                "Father's qualification": [
+                    "scale_normal"
+                ],
+                "Mother's occupation": [
+                    "scale_normal"
+                ],
+                "Father's occupation": [
+                    "scale_normal"
+                ],
+                "Admission grade": [
+                    "scale_normal"
+                ],
+                "Displaced": [
+                    "scale_normal"
+                ],
+                "Tuition fees up to date": [
+                    "scale_normal"
+                ],
+                "Age at enrollment": [
+                    "scale_normal"
+                ],
+                "Curricular units 1st sem (credited)": [
+                    "scale_normal"
+                ],
+                "Curricular units 1st sem (enrolled)": [
+                    "scale_normal"
+                ],
+                "Curricular units 1st sem (evaluations)": [
+                    "scale_normal"
+                ],
+                "Curricular units 1st sem (approved)": [
+                    "scale_normal"
+                ],
+                "Curricular units 1st sem (grade)": [
+                    "scale_normal"
+                ],
+                "Curricular units 2nd sem (credited)": [
+                    "scale_normal"
+                ],
+                "Curricular units 2nd sem (enrolled)": [
+                    "scale_normal"
+                ],
+                "Curricular units 2nd sem (evaluations)": [
+                    "scale_normal"
+                ],
+                "Curricular units 2nd sem (approved)": [
+                    "scale_normal"
+                ],
+                "Curricular units 2nd sem (grade)": [
+                    "scale_normal"
+                ],
+                "Unemployment rate": [
+                    "scale_normal"
+                ],
+                "Inflation rate": [
+                    "scale_normal"
+                ],
+                "GDP": [
+                    "scale_normal"
+                ]
+            },
+            "target_preprocessing": [
+                "na_exclude"
+            ],
+            "ml_task": "binary_classification"
+        },
+        "validation_strategy": {
+            "validation_type": "split",
+            "train_ratio": 0.8,
+            "shuffle": true,
+            "stratify": true,
+            "X_path": "AutoML_2\\X.data",
+            "y_path": "AutoML_2\\y.data",
+            "results_path": "AutoML_2"
+        },
+        "learner": {
+            "model_type": "Linear",
+            "ml_task": "binary_classification",
+            "n_jobs": -1,
+            "seed": 1235,
+            "explain_level": 2
+        },
+        "automl_random_state": 1234,
+        "ml_task": "binary_classification",
+        "explain_level": 2,
+        "name": "3_Linear",
+        "status": "initialized",
+        "final_loss": null,
+        "train_time": null,
+        "data_type": "original",
+        "max_time_for_learner": 360.0
+    },
+    "saved": [
+        "3_Linear\\learner_fold_0.linear"
+    ],
+    "predictions_fname": "3_Linear\\predictions_validation.csv",
+    "metric_name": "logloss",
+    "final_loss": 0.3156983587875652,
+    "train_time": 4.107611894607544,
+    "is_stacked": false,
+    "threshold": 0.5621514305559807
+}

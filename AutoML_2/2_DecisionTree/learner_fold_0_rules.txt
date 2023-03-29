@@ -1,0 +1,16 @@
+if (Curricular units 2nd sem (approved) > 3.5) and (Tuition fees up to date > 0.5) and (Curricular units 2nd sem (grade) > 11.256) then class: 1 (proba: 91.87%) | based on 1,612 samples
+
+if (Curricular units 2nd sem (approved) <= 3.5) and (Tuition fees up to date > 0.5) and (Curricular units 2nd sem (approved) <= 1.5) then class: 0 (proba: 75.69%) | based on 436 samples
+
+if (Curricular units 2nd sem (approved) <= 3.5) and (Tuition fees up to date <= 0.5) and (Curricular units 2nd sem (evaluations) <= 20.0) then class: 0 (proba: 96.88%) | based on 256 samples
+
+if (Curricular units 2nd sem (approved) <= 3.5) and (Tuition fees up to date > 0.5) and (Curricular units 2nd sem (approved) > 1.5) then class: 1 (proba: 59.58%) | based on 240 samples
+
+if (Curricular units 2nd sem (approved) > 3.5) and (Tuition fees up to date > 0.5) and (Curricular units 2nd sem (grade) <= 11.256) then class: 1 (proba: 76.68%) | based on 193 samples
+
+if (Curricular units 2nd sem (approved) > 3.5) and (Tuition fees up to date <= 0.5) and (Curricular units 2nd sem (approved) <= 5.5) then class: 0 (proba: 75.81%) | based on 62 samples
+
+if (Curricular units 2nd sem (approved) > 3.5) and (Tuition fees up to date <= 0.5) and (Curricular units 2nd sem (approved) > 5.5) then class: 1 (proba: 67.74%) | based on 31 samples
+
+if (Curricular units 2nd sem (approved) <= 3.5) and (Tuition fees up to date <= 0.5) and (Curricular units 2nd sem (evaluations) > 20.0) then class: 1 (proba: 100.0%) | based on 1 samples
+
