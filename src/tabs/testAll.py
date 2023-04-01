@@ -2,19 +2,11 @@ import pandas as pd
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 from supervised.automl import AutoML
-from faker import Faker
 
-path = Path.cwd() / "data"
-
-#Añade el dataset junto a columna nombre con nombres aleatorios
-fake = Faker()
+path = Path.cwd() / "src\data"
 
 df = pd.read_csv(path/"Dropout.csv", skipinitialspace=True)
-
-df.insert(loc=0, column='Name', value=[fake.name() for _ in range(len(df))])
-
-df.set_index("Name", inplace=True)
-
+df.set_index("StudentID", inplace=True)
 #Reemplazo la variable objetivo con valores numericos
 df["Target"] = df["Target"].replace({"Dropout": 0, "No dropout": 1})
 
