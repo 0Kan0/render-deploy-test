@@ -25,9 +25,9 @@ db2 = ExplainerDashboard(explainer2, header_hide_selector=True, hide_poweredby=T
 
 hub = ExplainerHub([db1, db2], title="Students Academic Failure Prediction Tool", description="")
 
-shutil.rmtree('AutoML_1')
-
 hub.run()
+
+shutil.rmtree('AutoML_1')
 
 if __name__ == "__main__":
     app.run_server(debug=False)
