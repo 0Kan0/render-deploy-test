@@ -204,11 +204,19 @@ class CounterfactualsComponent(ExplainerComponent):
 
     def __init__(self, explainer, title="Counterfactuals scenarios", name=None,
                         subtitle="What can a student improve?",
-                        index_dropdown=True, index=None,
-                        **kwargs):
+                        index_dropdown=True, index=None, dataframe=None, trained_model=None,
+                        contFeat=None, targetFeat=None, **kwargs):
         
         super().__init__(explainer, title, name)
 
+        self.dataframe = dataframe
+
+        self.trained_model = trained_model
+
+        self.contFeat = contFeat
+        
+        self.targetFeat = targetFeat
+        
         self.index_selector = IndexSelector(explainer, 'random-index-clas-index-'+self.name,
                                     index=index, index_dropdown=index_dropdown, **kwargs)
 
@@ -245,8 +253,21 @@ class CounterfactualsComponent(ExplainerComponent):
                     ], width=4, md=4), 
                 ], class_name="mb-2"),
 
-                dbc.Spinner(dbc.Row([
-                    dash_table.DataTable(id='tbl', data=None, style_table={'overflowX': 'scroll'})
+                html.Br(), 
+                html.Br(),
+
+                dbc.Spinner(
+                    dbc.Row([
+                        html.H3(f"Original", id='original-title', hidden=True),
+                        dash_table.DataTable(id='original-tbl', data=None, style_table={'overflowX': 'scroll'})
+                ], class_name="mb-2")),
+
+                html.Br(),
+
+                dbc.Spinner(
+                    dbc.Row([
+                        html.H3(f"Counterfactuals", id='counterfactuals-title', hidden=True),
+                        dash_table.DataTable(id='counterfactuals-tbl', data=None, style_table={'overflowX': 'scroll'})
                 ], class_name="mb-2")),
             ]),
         ], class_name="h-100")
@@ -261,8 +282,12 @@ class CounterfactualsComponent(ExplainerComponent):
 
     def component_callbacks(self, app):
         @app.callback(
-            Output('tbl', 'data'),
-            Output('tbl', 'columns'),
+            Output('counterfactuals-tbl', 'data'),
+            Output('counterfactuals-tbl', 'columns'),
+            Output('original-tbl', 'data'),
+            Output('original-tbl', 'columns'),
+            Output('counterfactuals-title', 'hidden'),
+            Output('original-title', 'hidden'),
             [State('random-index-clas-index-'+self.name, 'value'),
             State('input', 'value')],
             [Input('button', 'n_clicks')]
@@ -284,14 +309,17 @@ class CounterfactualsComponent(ExplainerComponent):
 
                 exp = dml.Dice(data, model)
 
-                dice_exp = exp.generate_counterfactuals(df_student, total_CFs=input, desired_class=1)
+                dice_exp = exp.generate_counterfactuals(df_student, total_CFs=input, desired_class="opposite")
 
                 cf_object = dice_exp.cf_examples_list[0].final_cfs_df
 
                 cf_object_to_csv = cf_object.to_csv(index=False)
                 cf_object_to_csv = pd.read_csv(StringIO(cf_object_to_csv))
 
-                data = cf_object_to_csv.to_dict('records')
-                columns = [{"name": i, "id": i} for i in cf_object_to_csv.columns]
+                counterfactuals_data = cf_object_to_csv.to_dict('records')
+                counterfactuals_columns = [{"name": i, "id": i} for i in cf_object_to_csv.columns]
 
-                return data, columns
+                original_data = df_student.to_dict('records')
+                original_columns = [{"name": i, "id": i} for i in df_student.columns]
+
+                return counterfactuals_data, counterfactuals_columns, original_data, original_columns, False, False

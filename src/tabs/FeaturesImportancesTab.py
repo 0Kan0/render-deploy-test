@@ -1,4 +1,4 @@
-import dash_html_components as html
+from dash import html
 import dash_bootstrap_components as dbc
 
 from explainerdashboard.custom import *
@@ -9,13 +9,11 @@ class FeaturesImportanceBasicTab(ExplainerComponent):
                     hide_selector=True, **kwargs):
 
         super().__init__(explainer, title, name)
-        self.importances = ImportancesComponent(
-                explainer, name=self.name+"0", hide_selector=True, hide_type=True, hide_depth=True, hide_popout=True)
+        self.importances = ImportancesComponent(explainer, name=self.name+"0", 
+                hide_selector=True, hide_type=True, hide_depth=True, hide_popout=False, description=None)
         self.confusionmatrix = ConfusionMatrixComponent(explainer, name=self.name+"2",
                 hide_selector=hide_selector, pos_label=pos_label, **kwargs)
         
-        if not self.explainer.descriptions:
-            self.hide_descriptions=True
 
     def layout(self):
         return dbc.Container([
@@ -32,6 +30,7 @@ class FeaturesImportanceBasicTab(ExplainerComponent):
                             f" and {self.explainer.columns_ranked_by_shap()[2]}."),
                 ], width=4, style=dict(margin=30)),
             ], class_name="mt-4"),
+
             dbc.Row([
                 dbc.Col([
                     html.H3("Description"),
@@ -56,7 +55,7 @@ class FeaturesImportanceExpertTab(ExplainerComponent):
 
         super().__init__(explainer, title, name)
         self.importances = ImportancesComponent(
-                explainer, name=self.name+"0", hide_selector=True, hide_popout=True)
+                explainer, name=self.name+"0", hide_selector=True, hide_popout=True, hide_descriptions=True)
         
         if not self.explainer.descriptions:
             self.hide_descriptions=True

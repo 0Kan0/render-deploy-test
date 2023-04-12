@@ -1,4 +1,4 @@
-import dash_html_components as html
+from dash import html
 import dash_bootstrap_components as dbc
 
 from explainerdashboard.custom import *
@@ -18,7 +18,7 @@ class ClassificationStatsTab(ExplainerComponent):
 
         self.summary = ClassifierModelSummaryComponent(explainer, name=self.name+"0", 
                 hide_selector=hide_selector, pos_label=pos_label, **kwargs)
-        self.precision = PrecisionComponent(explainer, name=self.name+"1",
+        self.rocauc = RocAucComponent(explainer, name=self.name+"1",
                 hide_selector=hide_selector, pos_label=pos_label, **kwargs)
         self.confusionmatrix = ConfusionMatrixComponent(explainer, name=self.name+"2",
                 hide_selector=hide_selector, pos_label=pos_label, **kwargs)
@@ -44,8 +44,8 @@ class ClassificationStatsTab(ExplainerComponent):
                                   hide=self.hide_confusionmatrix),
                     ], class_name="mt-4 gx-4"),
             dbc.Row([
-                make_hideable(dbc.Col(self.precision.layout()),
-                              hide=self.hide_precision),
+                make_hideable(dbc.Col(self.rocauc.layout()),
+                              hide=self.hide_rocauc),
                 make_hideable(dbc.Col(self.classification.layout()),
                               hide=self.hide_classification),
             ], class_name="mt-4 gx-4")

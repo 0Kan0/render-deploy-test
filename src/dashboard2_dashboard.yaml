@@ -1,5 +1,5 @@
 dashboard:
-  explainerfile: dashboard2_explainer.dill
+  explainerfile: C:\Users\sonic\Desktop\Render\dashboard2_explainer.dill
   params:
     title: AutoML Student Dropout Explainer expert
     name: dashboard2

@@ -1,8 +1,8 @@
-import dash_html_components as html
+from dash import html
 import dash_bootstrap_components as dbc
 
 from explainerdashboard.custom import *
-from .components import *
+from .components import SelectStudentComponent
 
 class WhatIfBasicTab(ExplainerComponent):
     def __init__(self, explainer, title="What if...", name=None,
@@ -24,7 +24,9 @@ class WhatIfBasicTab(ExplainerComponent):
                     feature_input_component=self.input,
                     hide_star_explanation=True,
                     hide_selector=hide_selector, **kwargs)
-        self.index_connector = IndexConnector(self.index, self.input, 
+        self.contribution = ShapContributionsGraphComponent(explainer, name=self.name+"3",
+                    hide_selector=hide_selector, **kwargs)
+        self.index_connector = IndexConnector(self.index, [self.input, self.contribution], 
                                     explainer=explainer if index_check else None)
 
     def layout(self):
@@ -60,7 +62,18 @@ class WhatIfBasicTab(ExplainerComponent):
                 dbc.Col([
                     self.input.layout(),
                 ], width=7, style=dict(margin=30)),             
-            ], class_name="mt-4")
+            ], class_name="mt-4"),
+
+            dbc.Row([ 
+                dbc.Col([
+                    self.contribution.layout(),
+                ], width=7, style=dict(margin=30)), 
+
+                dbc.Col([
+                    html.H3("Description"),
+                    html.Div("This graph shows how much each variable contributes."),
+                ], width=4, style=dict(margin=30)),
+            ], class_name="mt-4"),
         ], fluid=True)
     
 
@@ -84,7 +97,9 @@ class WhatIfExpertTab(ExplainerComponent):
                     feature_input_component=self.input,
                     hide_star_explanation=True,
                     hide_selector=hide_selector, **kwargs)
-        self.index_connector = IndexConnector(self.index, self.input, 
+        self.contribution = ShapContributionsGraphComponent(explainer, name=self.name+"3",
+                    hide_selector=hide_selector, **kwargs)
+        self.index_connector = IndexConnector(self.index, [self.input, self.contribution], 
                                     explainer=explainer if index_check else None)
 
     def layout(self):
@@ -97,6 +112,8 @@ class WhatIfExpertTab(ExplainerComponent):
                     ], class_name="mt-4 gx-4"),
             dbc.Row([
                     dbc.Col(
-                            self.input.layout()),             
+                            self.input.layout()),     
+                    dbc.Col(
+                            self.contribution.layout()),         
                     ], class_name="mt-4 gx-4")
         ], fluid=True)
